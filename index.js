@@ -44,9 +44,7 @@ function cmd() {
 
 async function test() {
     console.log('test started')
-    red.off()
-    green.off()
-    blue.off()
+    flush();
 
     await timeout(500)
 
@@ -62,7 +60,7 @@ async function test() {
     await timeout(500)
     green.off()
 
-
+    flush();
     console.log('test finished')
 }
 
@@ -76,5 +74,5 @@ async (function main() {
 
 
 
-
+rl.on('SIGINT',flush)
 process.on('SIGINT', flush);
