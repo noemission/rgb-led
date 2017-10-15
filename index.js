@@ -28,7 +28,7 @@ function cmd() {
         try {
             var color = new Color(answer)
         } catch (err) {
-            console.log(`Sorry ${answer} is not a valid color!`);
+            console.log(`Sorry "${answer}" is not a valid color!`);
             return cmd();
         }
 
@@ -78,6 +78,7 @@ main();
 
 rl.on('SIGINT', () =>{
     flush()
+    console.log("Bye!")
     rl.close()
 })
 process.on('SIGINT', () =>{
