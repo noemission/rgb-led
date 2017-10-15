@@ -37,6 +37,13 @@ async function main(){
     green.rgb(179);
     blue.rgb(135);
 
+    await timeout(50000)
 }
 
 main()
+
+process.on('exit',()=>{
+    red.off()
+    green.off()
+    blue.off()
+})
