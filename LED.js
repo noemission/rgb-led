@@ -36,7 +36,9 @@ class Led {
         else if (value < 0) value = 0;
         this.led.pwmWrite(value)
         if (this.pwmWrites == 0) {
-            this.led.pwmWrite(value)
+            setTimeout( () =>{
+                this.led.pwmWrite(value)
+            },200)
         }
         this.pwmWrites++
     }
