@@ -34,13 +34,12 @@ class Led {
         value = parseInt(255 - value);
         if (value > 255) value = 255;
         else if (value < 0) value = 0;
+
         this.led.pwmWrite(value)
-        if (this.pwmWrites == 0) {
-            setTimeout( () =>{
-                this.led.pwmWrite(value)
-            },0)
-        }
-        this.pwmWrites++
+
+        this.pwmWrites++ == 0 ? setTimeout(() => {
+            this.led.pwmWrite(value)
+        }, 0) : null;
     }
 }
 
