@@ -6,8 +6,8 @@ const green = new Led(12)
 const blue = new Led(18)
 
 
-async function main() {
-    console.log('started')
+async function test() {
+    console.log('test started')
     red.off()
     green.off()
     blue.off()
@@ -27,7 +27,16 @@ async function main() {
     green.off()
     
     
-    console.log('finished')
+    console.log('test finished')
 }
 
-delay()
+async function main(){
+    await test();
+
+    red.rgb(52);
+    green.rgb(179);
+    blue.rgb(135);
+
+}
+
+main()

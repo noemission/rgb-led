@@ -1,6 +1,17 @@
 const Gpio = require('pigpio').Gpio;
 
+
+/**
+ * 
+ * 
+ * @class Led
+ */
 class Led{
+    /**
+     * Creates an instance of Led.
+     * @param {number} pin 
+     * @memberof Led
+     */
     constructor(pin){
         this.led = new Gpio(pin, {mode: Gpio.OUTPUT});
     }
@@ -10,6 +21,12 @@ class Led{
     off(){
         this.led.digitalWrite(1);
     }
+    /**
+     * 
+     * 
+     * @param {number} value 
+     * @memberof Led
+     */
     rgb(value){
         value = parseInt(255-value);
         if(value>255) value = 255;
