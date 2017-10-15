@@ -1,6 +1,7 @@
 const Led = require('./LED')
 const readline = require('readline');
 const Color = require('color');
+const chalk = require('chalk');
 
 
 //initialization
@@ -35,7 +36,7 @@ function cmd() {
         red.rgb(color.red())
         green.rgb(color.green())
         blue.rgb(color.blue())
-        //console.log(`Thank you for your valuable feedback: ${answer}`);
+        console.log(`Check the led, I think it's ${chalk.hex(color.hex()).underline(answer)}!`);
 
         cmd()
     });
@@ -78,7 +79,7 @@ main();
 
 rl.on('SIGINT', () =>{
     flush()
-    console.log("Bye!")
+    console.log("\nBye!")
     rl.close()
 })
 process.on('SIGINT', () =>{
