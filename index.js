@@ -67,10 +67,12 @@ async function test() {
 
 
 
-async (function main() {
+async function main() {
     await test();
     cmd()
-})()
+}
+
+main();
 
 
 
