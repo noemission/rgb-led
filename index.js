@@ -76,5 +76,11 @@ main();
 
 
 
-rl.on('SIGINT',flush)
-process.on('SIGINT', flush);
+rl.on('SIGINT', () =>{
+    flush()
+    rl.close()
+})
+process.on('SIGINT', () =>{
+    flush()
+    process.exit()
+});
