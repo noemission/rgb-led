@@ -11,26 +11,26 @@ async function test() {
     red.off()
     green.off()
     blue.off()
-    
+
     await timeout(500)
-    
+
     red.on()
     await timeout(500)
     red.off()
-    
+
     blue.on()
     await timeout(500)
     blue.off()
-    
+
     green.on()
     await timeout(500)
     green.off()
-    
-    
+
+
     console.log('test finished')
 }
 
-async function main(){
+async function main() {
     await test();
 
     red.rgb(52);
@@ -42,8 +42,8 @@ async function main(){
 
 main()
 
-process.on('exit',()=>{
+process.on('SIGINT', () => {
     red.off()
     green.off()
     blue.off()
-})
+});
